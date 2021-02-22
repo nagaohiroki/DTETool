@@ -24,7 +24,7 @@ public class VSController
 			case "BreakPoint": BreakPoint(filepath, line, col); break;
 			case "DeleteBreakPoint": DeleteBreakPoint(); break;
 			case "AttachProcess": AttachProcess(filepath); break;
-			case "DetachProcess": AttachProcess(filepath); break;
+			case "DetachProcess": DetachProcess(); break;
 			default: break;
 		}
 	}
