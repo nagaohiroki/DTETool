@@ -22,7 +22,9 @@ public class VSController
 		{
 			case "OpenFile": OpenFile(filepath, line, col); break;
 			case "BreakPoint": BreakPoint(filepath, line, col); break;
-			case "Attach": Attach(filepath); break;
+			case "DeleteBreakPoint": DeleteBreakPoint(); break;
+			case "AttachProcess": AttachProcess(filepath); break;
+			case "DetachProcess": AttachProcess(filepath); break;
 			default: break;
 		}
 	}
@@ -33,9 +35,13 @@ public class VSController
 			return inDefault;
 		}
 		return inArgs[inIndex];
-
 	}
-	void Attach(string inName)
+	void DetachProcess()
+	{
+		var dte = myDTE;
+		dte.Debugger.DetachAll();
+	}
+	void AttachProcess(string inName)
 	{
 		var dte = myDTE;
 		if(dte.Debugger.DebuggedProcesses.Count != 0)
@@ -86,5 +92,10 @@ public class VSController
 			}
 		}
 		breakpoints.Add("", inPath, inLine, inCol);
+	}
+	void DeleteBreakPoint()
+	{
+		var dte = myDTE;
+		dte.Debugger.DetachAll();
 	}
 }
