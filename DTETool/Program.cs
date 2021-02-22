@@ -1,5 +1,4 @@
-﻿using System;
-using System.IO;
+﻿using System.IO;
 using System.Runtime.InteropServices;
 using EnvDTE;
 class Program
@@ -39,7 +38,6 @@ public class VSController
 	void Attach(string inName)
 	{
 		var dte = myDTE;
-		Console.WriteLine($"{dte.Debugger.DebuggedProcesses.Count}");
 		if(dte.Debugger.DebuggedProcesses.Count != 0)
 		{
 			dte.Debugger.DetachAll();
