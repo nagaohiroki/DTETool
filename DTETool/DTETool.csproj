@@ -6,7 +6,7 @@
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProjectGuid>{92F11B90-B17A-4B55-9437-6D015D9CA6E5}</ProjectGuid>
     <OutputType>Exe</OutputType>
-    <RootNamespace>DTET0ol</RootNamespace>
+    <RootNamespace>DTETool</RootNamespace>
     <AssemblyName>DTETool</AssemblyName>
     <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
