@@ -96,6 +96,11 @@ public class VSController
 	void DeleteBreakPoint()
 	{
 		var dte = myDTE;
-		dte.Debugger.DetachAll();
+		var breakpoints = dte.Debugger.Breakpoints;
+		for(int i = 0; i < breakpoints.Count; i++)
+		{
+			var point = breakpoints.Item(i + 1);
+			point.Delete();
+		}
 	}
 }
